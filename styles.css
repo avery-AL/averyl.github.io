@@ -168,10 +168,6 @@ body, html {
   overflow: hidden;
   background-color: #333;
   margin: 0 auto;
-
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform .15s ease, box-shadow .2s ease;
 }
 .AnimatedArrow:hover,
 .AnimatedArrow:focus-visible {
@@ -187,42 +183,6 @@ body, html {
 .ArrowIcon {
   animation: bounce 1.5s infinite;
   display: inline-block;
-}
-
-/* Tooltip */
-.down-link {
-  position: relative;
-}
-.down-link::after {
-  content: "Click to see more details";
-  position: absolute;
-  bottom: 115%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #222;
-  color: #fff;
-  padding: 6px 8px;
-  border-radius: 6px;
-  font-size: 12px;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .2s ease;
-}
-.down-link:hover::after,
-.down-link:focus-visible::after {
-  opacity: 1;
-}
-.next-label {
-  text-align: center;
-  margin-top: 10px;
-  color: #f6c700;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ArrowIcon { animation: none; }
 }
 
 @keyframes bounce {
