@@ -20,5 +20,5 @@ jobs:
         with:
           github_token: ${{ secrets.DEPLOY_TOKEN }}
           external_repository: averylAL/averylAL.github.io
-          publish_branch: main   # GitHub Pages 会用 main
+          publish_branch: main   
           publish_dir: ./ 
