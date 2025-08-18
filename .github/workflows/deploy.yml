@@ -15,10 +15,17 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Push to public repo
+      - name: Prepare site files
+        run: |
+          mkdir public
+          cp index.html public/
+          cp styles.css public/
+          cp -r aboutme contact demo images projects skills public/
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.DEPLOY_TOKEN }}
           external_repository: averylAL/averylAL.github.io
           publish_branch: main
-          publish_dir: ./index.html
+          publish_dir: ./public
