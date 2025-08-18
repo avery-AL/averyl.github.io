@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Employment Assessment Tool</title>
+  <style>
+    :root{
+      --bg: #0b0c10;
+      --card: #111318;
+      --muted: #9aa3af;
+      --text: #f3f4f6;
+      --primary: #6ee7b7;   /* mint */
+      --accent: #60a5fa;    /* blue */
+      --border: #1f2937;
+      --chip: #1f2937;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f7f8fa; --card:#ffffff; --text:#0f172a; --muted:#64748b;
+        --border:#e5e7eb; --chip:#eef2ff; --primary:#059669; --accent:#2563eb;
+      }
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0; height:100%; background:var(--bg); color:var(--text); font:500 16px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+
+    .wrap{
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(96,165,250,0.08), transparent 35%),
+                  var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+
+    .header{
+      padding: 28px 28px 10px;
+      display:flex; align-items:center; gap:16px;
+    }
+    .logo{
+      width:48px; height:48px; border-radius:12px;
+      background: radial-gradient(120% 120% at 0% 0%, var(--accent), transparent 70%),
+                  radial-gradient(120% 120% at 100% 100%, var(--primary), transparent 70%);
+      border:1px solid var(--border);
+      flex: 0 0 auto;
+    }
+    .title h1{
+      margin:0; font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      letter-spacing:.2px;
+    }
+    .title p{
+      margin:.25rem 0 0; color:var(--muted); font-weight:500
+    }
+
+    .content{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 10px 28px 24px;
+    }
+    @media (min-width: 820px){
+      .content{ grid-template-columns: 1.1fr .9fr; align-items:start }
+    }
+
+    .shot{
+      background: #0f1115; border:1px solid var(--border);
+      border-radius: 16px; overflow: hidden;
+      aspect-ratio: 16/9;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .shot img{
+      width:100%; height:100%; object-fit:cover; display:block;
+    }
+    .shot .placeholder{
+      color:var(--muted); padding:16px; text-align:center;
+    }
+
+    .section + .section{ margin-top:16px }
+
+    .tech{
+      display:flex; flex-wrap: wrap; gap:8px; margin-top:8px
+    }
+    .chip{
+      padding:6px 10px; border:1px solid var(--border);
+      background: var(--chip);
+      color: var(--text);
+      border-radius: 999px; font-size: 13px; font-weight:600;
+    }
+
+    ul{ margin:10px 0 0 1.1rem; padding:0 }
+    li{ margin:.35rem 0 }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <article class="card" aria-labelledby="project-title">
+      <header class="header">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title">
+          <h1 id="project-title">AI Employment Assessment Tool</h1>
+          <p>Automated employment document analysis & candidate assessment</p>
+        </div>
+      </header>
+
+      <section class="content">
+        <!-- Left: Visual / Screenshot -->
+        <figure class="shot" aria-label="Project screenshot">
+          <div class="placeholder">
+            <img src="../../images/ai_tool.png" alt="AI Employment Assessment Tool">
+          </div>
+        </figure>
+
+        <!-- Right: Details -->
+        <div>
+          <section class="section">
+            <h2 style="margin:0 0 6px;font-size:1.05rem">Overview</h2>
+            <p style="margin:0">
+              A scalable platform for automated parsing and evaluation of employment documents,
+              combining OCR, LLM reasoning, and ML scoring to streamline screening workflows.
+            </p>
+          </section>
+
+          <section class="section">
+            <h2 style="margin:0 0 6px;font-size:1.05rem">Tech Stack</h2>
+            <div class="tech">
+              <span class="chip">Python</span>
+              <span class="chip">FastAPI</span>
+              <span class="chip">Docker</span>
+              <span class="chip">GitHub Actions</span>
+              <span class="chip">scikit-learn</span>
+              <span class="chip">TensorFlow</span>
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">Redis</span>
+            </div>
+          </section>
+
+          <section class="section" aria-label="Key highlights">
+            <h2 style="margin:0 0 6px;font-size:1.05rem">Highlights</h2>
+            <ul>
+              <li>Designed scalable backend with FastAPI + asyncio for high-throughput requests.</li>
+              <li>Integrated OCR–LLM pipelines (TensorFlow + Python) to minimize manual extraction.</li>
+              <li>Implemented model registry with versioning and A/B testing for continuous improvement.</li>
+              <li>Built CI/CD via GitHub Actions for automated tests, linting, and container deploys.</li>
+            </ul>
+          </section>
+        </div>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
