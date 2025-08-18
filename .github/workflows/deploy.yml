@@ -21,4 +21,4 @@ jobs:
           personal_token: ${{ secrets.DEPLOY_TOKEN }}
           external_repository: averylAL/averylAL.github.io
           publish_branch: main
-          publish_dir: ./
+          publish_dir: ./ 
